@@ -1,7 +1,10 @@
 # 1. Бинарный поиск.
+import time
 
+data_search = int(input('Введите данные поиска: '))
+time_start = time.time()
 def bynary_search(data_list):
-    data_search = int(input('Введите данные поиска: '))
+    
     data_list = sorted(data_list)
     print(data_list)
     low = 0
@@ -20,3 +23,5 @@ def bynary_search(data_list):
 my_list = [2, 4, 7, 1, 3, 10]
 print(bynary_search(my_list))
 
+delta_time = time.time() - time_start
+print(delta_time)
