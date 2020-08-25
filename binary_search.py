@@ -21,9 +21,9 @@ def bynary_search(data_list):
             low = mid + 1
     return None                     # значение не существует
 
-my_list = [2, 4, 7, 1, 3, 10]
-print(bynary_search(my_list))
+my_list = [2, 4, 7, 1, 3, 10, ]
 
+print(bynary_search(my_list))
 delta_time = time.time() - time_start
 print(delta_time)
 
