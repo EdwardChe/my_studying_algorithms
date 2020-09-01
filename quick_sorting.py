@@ -1,3 +1,5 @@
+# быстрая сортировка
+
 def quick_sorting(arr):
     if len(arr) < 2:
         return arr

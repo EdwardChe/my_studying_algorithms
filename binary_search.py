@@ -1,4 +1,4 @@
-# 1. Бинарный поиск.
+# Бинарный поиск.
 
 import time
 
@@ -10,17 +10,22 @@ def bynary_search(data_list):
     print(data_list)
     low = 0
     high = len(data_list) - 1
-    while low <= high:              # пока не останется 1 элемент
-        mid = (high + low) // 2     # определяем средний элемент
+    # пока не останется 1 элемент
+    while low <= high: 
+        # определяем средний элемент         
+        mid = (high + low) // 2     
         guess = data_list[mid]
-        if guess == data_search:    # значение найдено
+        # значение найдено
+        if guess == data_search:    
             return mid
-        if guess > data_search:     # больше 
+            # больше 
+        if guess > data_search:     
             high = mid - 1
-        else:                       # меньше 
+            # меньше 
+        else:                       
             low = mid + 1
-    return None                     # значение не существует
-
+            # значение не существует
+    return None                     
 my_list = [2, 4, 7, 1, 3, 10, ]
 
 print(bynary_search(my_list))

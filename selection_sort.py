@@ -1,15 +1,18 @@
-# 2. Сортировка выбором
+# Сортировка выбором
 
-def find_small_element(arr):            # нахождение наименьшего значения
+# нахождение наименьшего значения
+def find_small_element(arr):            
     small_element = arr[0]  
     small_element_index = 0
     for i in range(1, len(arr)):
         if arr[i] < small_element:
             small_element = arr[i]
-            small_element_index = i     # сохранение индекса нименьшего значения
+            # сохранение индекса нименьшего значения
+            small_element_index = i     
     return small_element_index
 
-def selection_sort(arr):                # сортировка массива
+# сортировка массива
+def selection_sort(arr):                
     new_array = []
     for i in range(len(arr)):
         smallest_element = find_small_element(arr)

@@ -1,6 +1,9 @@
+# Поиск в ширину
+
 from collections import deque
 
-def person_is_seller(name):                         # критерий соответствия результату поиска
+# критерий соответствия результату поиска
+def person_is_seller(name):                         
     return name[-1] == 'm'
 
 graph = {}
@@ -13,19 +16,26 @@ graph["peggy"] = []
 graph["thom"] = []
 graph["jonny"] = []
 
-print(graph)
 def search(name):
-    search_queue = deque()                          # создание новой очереди
-    search_queue += graph[name]                     # добавление всех соседей
-    searched = []                                   # для отслеживания проверенных
+    # создание новой очереди
+    search_queue = deque()    
+    # добавление всех соседей                      
+    search_queue += graph[name]
+    # для отслеживания проверенных                     
+    searched = []                                   
     while search_queue:
-        person = search_queue.popleft()             # извлечение первого из очереди
-        if not person in searched:                  # проверка, что не повторно
-            if person_is_seller(person):            # проверка, что является результатом поиска
-                print(person + ' is a seller!')     # если соответствует 
+        # извлечение первого из очереди
+        person = search_queue.popleft()             
+        # проверка, что не повторно
+        if not person in searched:
+            # проверка, что является результатом поиска              
+            if person_is_seller(person): 
+                # если соответствует           
+                print(person + ' is a seller!')      
                 return True
             else:
-                search_queue +=graph[person]        # если не соответствует
+                # если не соответствует
+                search_queue +=graph[person]        
                 searched.append(person)
     return False
 
